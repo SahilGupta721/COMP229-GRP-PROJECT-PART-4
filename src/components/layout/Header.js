@@ -1,22 +1,18 @@
-import { Outlet, NavLink, Link, useLocation } from "react-router-dom";
-import image_logo from "../images/elites-logo.png";
+import { Outlet, NavLink, Link } from "react-router-dom";
+import image_logo from "../../assets/image_logo.JPG";
 import { isAuthenticated, getUsername, clearJWT } from "../auth/auth-helper";
 
-import "../../index.css";
 const Header = () => {
-
-  const location = useLocation();
-
   const signoutClick = () => {
     clearJWT();
-  }
+  };
 
   return (
     <>
       <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
-            <img src={image_logo} alt="logo" style={{ width: 60, height:60 }} />
+            <img src={image_logo} alt="logo" style={{ width: 40 }} />
           </NavLink>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span className="navbar-toggler-icon"></span>
@@ -37,39 +33,36 @@ const Header = () => {
                 <NavLink className="nav-link" to="/about">
                   <i className="fa-solid fa-address-book"></i> About
                 </NavLink>
-                </li>
-                
-                <li className="nav-item">
-                <NavLink className="nav-link" to="/register">
-                  <i className="fa-solid fa-address-book"></i> Register
-                </NavLink>
               </li>
+              
               <li className="nav-item dropdown">
-                <Link className='nav-link dropdown-toggle' to="#" role="button" data-bs-toggle="dropdown">
-                  <i className="fa-solid fa-barcode"></i> Inventory
+                <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown">
+                  <i className="fa-solid fa-ad"></i> Ads
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <NavLink className="dropdown-item" to="/inventory/list">
-                      <i className="fa-regular fa-rectangle-list"></i> Inventory List
+                    <NavLink className="dropdown-item" to="/ads/list">
+                      <i className="fa-regular fa-rectangle-list"></i> Ads List
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/inventory/add">
-                      <i className="fa-solid fa-square-plus"></i> Add a new Item
+                    <NavLink className="dropdown-item" to="/ads/add">
+                      <i className="fa-solid fa-square-plus"></i> Add a new Ad
                     </NavLink>
                   </li>
                 </ul>
-              </li >
+              </li>
               <li className="nav-item">
-                {!isAuthenticated() &&
+                {!isAuthenticated() && (
                   <NavLink className="nav-link" to="/users/signin">
                     <i className="fa-solid fa-right-to-bracket"></i> Signin
-                  </NavLink>}
-                {isAuthenticated() &&
+                  </NavLink>
+                )}
+                {isAuthenticated() && (
                   <Link className="nav-link" to="/" onClick={signoutClick}>
                     <i className="fa-solid fa-right-from-bracket"></i> Sign-out ({getUsername()})
-                  </Link>}
+                  </Link>
+                )}
               </li>
             </ul>
           </div>
@@ -78,8 +71,7 @@ const Header = () => {
 
       <Outlet />
     </>
-  )
+  );
 };
 
 export default Header;
-

@@ -2,13 +2,17 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
-  font: "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding-bottom:20px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding-bottom: 20px;
+  background-color: #f8f9fa;
 }
+
 h1 {
   color: #00B7FF;
 }
+
 footer {
   position: fixed;
   left: 0;
@@ -19,9 +23,54 @@ footer {
   text-align: center;
   font-size: small;
 }
-.flash{
+
+.flash {
   color: red;
 }
-.navbar navbar-expand-sm bg-dark navbar-dark{
+
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar-brand img {
+  width: 40px;
+}
+
+.nav-link {
+  color: #ffffff !important;
+}
+
+.nav-link:hover {
+  color: #00B7FF !important;
+}
+
+.dropdown-menu {
+  background-color: #343a40;
+}
+
+.dropdown-item {
+  color: #ffffff;
+}
+
+.dropdown-item:hover {
   background-color: #00B7FF;
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.table-responsive {
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  vertical-align: middle;
 }
