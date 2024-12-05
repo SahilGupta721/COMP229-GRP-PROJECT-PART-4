@@ -11,6 +11,7 @@ import AddAds from "./components/ads/Addingads";
 import EditAds from "./components/ads/Editingads";
 import Signin from "./components/auth/Signin";
 import PrivateRoute from "./components/auth/PrivateRoute";
+import AddUser from "./components/auth/AddUser";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="projects" element={<Projects />} />
           <Route path="about" element={<About />} />
           <Route path="users/signin" element={<Signin />} />
+          <Route path="users/signup" element={<AddUser />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

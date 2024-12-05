@@ -34,7 +34,7 @@ const Header = () => {
                   <i className="fa-solid fa-address-book"></i> About
                 </NavLink>
               </li>
-              
+
               <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown">
                   <i className="fa-solid fa-ad"></i> Ads
@@ -51,6 +51,11 @@ const Header = () => {
                     </NavLink>
                   </li>
                 </ul>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/users/signup">
+                  <i className="fa-solid fa-user-plus"></i> Sign-up
+                </NavLink>
               </li>
               <li className="nav-item">
                 {!isAuthenticated() && (

@@ -18,7 +18,7 @@ const list = async () => {
 
 const create = async (ad) => {
     try {
-        let response = await fetch(apiURL + '/ads/add/', {
+        let response = await fetch(apiURL + '/ads/create', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
