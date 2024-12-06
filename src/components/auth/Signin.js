@@ -43,7 +43,7 @@ const Signin = () => {
         <div className="container" style={{ paddingTop: 80 }}>
             <div className="row">
                 <div className="offset-md-3 col-md-6">
-                    <h1>Signin</h1>
+                    <h1>SignIn</h1>
                     <p className="flash"><span>{errorMsg}</span></p>
                     <form onSubmit={handleSubmit} className="form">
                         <div className="form-group">
@@ -73,7 +73,7 @@ const Signin = () => {
 
                         <button className="btn btn-primary" type="submit">
                             <i className="fas fa-edit"></i>
-                            Submit
+                            SignIn
                         </button>
                         &nbsp; &nbsp;
                         <Link to="/users/signup" style={{ textDecoration: 'none' }}>

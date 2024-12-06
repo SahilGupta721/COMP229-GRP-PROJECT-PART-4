@@ -1,10 +1,14 @@
-import { Outlet, NavLink, Link } from "react-router-dom";
+
+import { Outlet, NavLink, Link, useNavigate } from "react-router-dom";
 import image_logo from "../../assets/image_logo.JPG";
 import { isAuthenticated, getUsername, clearJWT } from "../auth/auth-helper";
 
 const Header = () => {
+  let navigate = useNavigate();
+
   const signoutClick = () => {
     clearJWT();
+    navigate("/ads/list");
   };
 
   return (
@@ -34,7 +38,6 @@ const Header = () => {
                   <i className="fa-solid fa-address-book"></i> About
                 </NavLink>
               </li>
-
               <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown">
                   <i className="fa-solid fa-ad"></i> Ads
@@ -52,20 +55,23 @@ const Header = () => {
                   </li>
                 </ul>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/users/signup">
-                  <i className="fa-solid fa-user-plus"></i> Sign-up
-                </NavLink>
-              </li>
+              {!isAuthenticated() && (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/users/signup">
+                    <i className="fa-solid fa-user-plus"></i> SignUp
+                  </NavLink>
+                </li>
+              )}
               <li className="nav-item">
                 {!isAuthenticated() && (
                   <NavLink className="nav-link" to="/users/signin">
-                    <i className="fa-solid fa-right-to-bracket"></i> Signin
+                    <i className="fa-solid fa-right-to-bracket"></i> SignIn
                   </NavLink>
                 )}
                 {isAuthenticated() && (
                   <Link className="nav-link" to="/" onClick={signoutClick}>
-                    <i className="fa-solid fa-right-from-bracket"></i> Sign-out ({getUsername()})
+                    <i className="fa-solid fa-right-from-bracket"></i>
+                    SignOut ({getUsername()})
                   </Link>
                 )}
               </li>

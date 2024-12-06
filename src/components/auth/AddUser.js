@@ -43,7 +43,7 @@ const AddUser = () => {
         <div className="container" style={{ paddingTop: 80 }}>
             <div className="row">
                 <div className="offset-md-3 col-md-6">
-                    <h1>Add a new user</h1>
+                    <h1>Register new user</h1>
 
                     <form onSubmit={handleSubmit} className="form">
                         <div className="form-group">
