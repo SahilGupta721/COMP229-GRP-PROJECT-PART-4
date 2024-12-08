@@ -1,8 +1,20 @@
+/*
+Web App Name = SELL USED PRODUCTS SITE
+
+Description = Motive of this full-stack application is to allow users to perform CRUD operations on Advertisements related to any product, also users can post and see questions and answers.
+
+GROUP-2, ELITES
+SAHIL GUPTA(Product Manager)
+Student_Id = 301436261
+MICHAEL ASFEHA(Senior Software Engineer)
+Student_Id = 301411864
+*/
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { create } from "../../datasource/api-ads";
 import AdsModel from "../../datasource/adsModel";
-
+import intro from "../../assets/videos/intro.mp4";
 const AddAds = () => {
     let navigate = useNavigate();
     let [ad, setAd] = useState(new AdsModel());
@@ -38,71 +50,74 @@ const AddAds = () => {
     };
 
     return (
-        <div className="container" style={{ paddingTop: 80 }}>
-            <div className="row">
-                <div className="offset-md-3 col-md-6">
-                    <h1>Add a new ad</h1>
-                    <form onSubmit={handleSubmit} className="form">
-                        <div className="form-group">
-                            <label htmlFor="titleTextField">Title</label>
-                            <input type="text" className="form-control"
-                                id="titleTextField"
-                                placeholder="Enter the title"
-                                name="title"
-                                value={ad.title || ''}
-                                onChange={handleChange}
-                                required>
-                            </input>
-                        </div>
-                        <br />
-                        <div className="form-group">
-                            <label htmlFor="descriptionTextField">Description</label>
-                            <textarea className="form-control"
-                                id="descriptionTextField"
-                                placeholder="Enter the description"
-                                name="description"
-                                value={ad.description || ''}
-                                onChange={handleChange}
-                                required>
-                            </textarea>
-                        </div>
-                        <br />
-                        <div className="form-group">
-                            <label htmlFor="priceTextField">Price</label>
-                            <input type="text" className="form-control"
-                                id="priceTextField"
-                                placeholder="Enter the price"
-                                name="price"
-                                value={ad.price || ''}
-                                onChange={handleChange}
-                                required>
-                            </input>
-                        </div>
-                        <br />
-                        <div className="form-group">
-                            <label htmlFor="expiresAtTextField">Expires At</label>
-                            <input type="date" className="form-control"
-                                id="expiresAtTextField"
-                                name="expiresAt"
-                                value={ad.expiresAt || ''}
-                                onChange={handleChange}
-                                required>
-                            </input>
-                        </div>
-                        <br />
-                        <button className="btn btn-primary" type="submit">
-                            <i className="fas fa-edit"></i>
-                            Submit
-                        </button>
-                        <Link href="#" to="/ads/list" className="btn btn-warning">
-                            <i className="fas fa-undo"></i>
-                            Cancel
-                        </Link>
-                    </form>
+        <>
+            <div className="container" style={{ paddingTop: 80 }}>
+                <div className="row">
+
+                    <div className="offset-md-3 col-md-6">
+                        <h1>Add a new ad</h1>
+                        <form onSubmit={handleSubmit} className="form">
+                            <div className="form-group">
+                                <label htmlFor="titleTextField">Title</label>
+                                <input type="text" className="form-control"
+                                    id="titleTextField"
+                                    placeholder="Enter the title"
+                                    name="title"
+                                    value={ad.title || ''}
+                                    onChange={handleChange}
+                                    required>
+                                </input>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="descriptionTextField">Description</label>
+                                <textarea className="form-control"
+                                    id="descriptionTextField"
+                                    placeholder="Enter the description"
+                                    name="description"
+                                    value={ad.description || ''}
+                                    onChange={handleChange}
+                                    required>
+                                </textarea>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="priceTextField">Price</label>
+                                <input type="text" className="form-control"
+                                    id="priceTextField"
+                                    placeholder="Enter the price"
+                                    name="price"
+                                    value={ad.price || ''}
+                                    onChange={handleChange}
+                                    required>
+                                </input>
+                            </div>
+                            <br />
+                            <div className="form-group">
+                                <label htmlFor="expiresAtTextField">Expires At</label>
+                                <input type="date" className="form-control"
+                                    id="expiresAtTextField"
+                                    name="expiresAt"
+                                    value={ad.expiresAt || ''}
+                                    onChange={handleChange}
+                                    required>
+                                </input>
+                            </div>
+                            <br />
+                            <button className="btn btn-primary" type="submit">
+                                <i className="fas fa-edit"></i>
+                                Submit
+                            </button>
+                            <Link href="#" to="/ads/list" className="btn btn-warning">
+                                <i className="fas fa-undo"></i>
+                                Cancel
+                            </Link>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+            </>
+            );
 };
 
 export default AddAds;

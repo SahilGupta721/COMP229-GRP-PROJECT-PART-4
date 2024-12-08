@@ -1,0 +1,78 @@
+/* Web App Name = SELL USED PRODUCTS SITE
+
+Description = Motive of this full-stack application is to allow users to perform CRUD operations on Advertisements related to any product, also users can post and see questions and answers.
+
+GROUP-2, ELITES
+SAHIL GUPTA(Product Manager)
+Student_Id = 301436261
+MICHAEL ASFEHA(Senior Software Engineer)
+Student_Id = 301411864 */
+
+h1 {
+    margin-top: 20px;
+    color: black;
+    text-align: center;
+}
+#content_about> h1{
+    color: white;
+}
+
+#about_video>video {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    object-fit: cover;
+
+}
+
+#about_home {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    height: 100%;
+
+}
+
+.about_section {
+    display: flex;
+    color: white;
+    width: 50%;
+    border: 4px solid transparent;
+    font-weight: bolder;
+    margin: auto;
+    margin-top:40px;
+    justify-content: center;
+    transition: all 2s;
+    color: black;
+
+
+}
+.about_section:hover{
+    border-radius:20px ;
+    backdrop-filter: blur(20px);
+    border: 4px solid rebeccapurple;
+    cursor: pointer;
+
+}
+
+#about_section_one_content {
+    margin-top: 50px;
+    backdrop-filter: blur(5px);
+    border:4px solid transparent ;
+    height: 280px;
+    padding: 30px;
+    border-radius: 10%;
+    transition: all 2s;
+}
+
+#about_one_content:hover {
+    border: 4px solid rgba(255,148,98,255);
+    cursor: pointer;
+}
+
+.about_benefits {
+    list-style-type: none;
+    margin-top: 50px;
+}
+

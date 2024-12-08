@@ -1,6 +1,18 @@
+/*
+Web App Name = SELL USED PRODUCTS SITE
+
+Description = Motive of this full-stack application is to allow users to perform CRUD operations on Advertisements related to any product, also users can post and see questions and answers.
+
+GROUP-2, ELITES
+SAHIL GUPTA(Product Manager)
+Student_Id = 301436261
+MICHAEL ASFEHA(Senior Software Engineer)
+Student_Id = 301411864
+*/
+
 
 import { Outlet, NavLink, Link, useNavigate } from "react-router-dom";
-import image_logo from "../../assets/image_logo.JPG";
+import image_logo from "../../assets/images/elites-logo.png";
 import { isAuthenticated, getUsername, clearJWT } from "../auth/auth-helper";
 
 const Header = () => {
@@ -28,11 +40,7 @@ const Header = () => {
                   <i className="fas fa-home"></i> Home
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/projects">
-                  <i className="fas fa-project-diagram"></i> Projects
-                </NavLink>
-              </li>
+             
               <li className="nav-item">
                 <NavLink className="nav-link" to="/about">
                   <i className="fa-solid fa-address-book"></i> About
